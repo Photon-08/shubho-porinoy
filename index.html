@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f8f1e6" />
+  <meta name="description" content="Indranil and Shaibalini invite you to celebrate their Bengali wedding on 7 December 2026." />
+  <title>Indranil & Shaibalini — Shubho Bibaho</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f8f1e6;
+      --paper-deep: #efe2cf;
+      --ink: #38251f;
+      --muted: #79665a;
+      --red: #9e302d;
+      --red-dark: #722320;
+      --gold: #b58a50;
+      --line: rgba(87, 52, 39, .2);
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+      --bengali: "Tiro Bangla", Georgia, serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--ink); background: var(--paper);
+      font-family: var(--sans); line-height: 1.65;
+      background-image: radial-gradient(rgba(103,70,45,.08) .7px, transparent .7px);
+      background-size: 8px 8px;
+    }
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .wrap { width: min(1100px, calc(100% - 36px)); margin: auto; }
+    .topbar {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 22px 0; border-bottom: 1px solid var(--line);
+      font-size: .78rem; letter-spacing: .12em; text-transform: uppercase;
+    }
+    .brand { color: var(--red); font-weight: 700; letter-spacing: .08em; }
+    .topbar nav { display: flex; gap: 20px; }
+    .topbar nav a { text-decoration: none; color: var(--muted); }
+    .topbar nav a:hover { color: var(--red); }
+    .hero { min-height: 82vh; display: grid; place-items: center; text-align: center; padding: 70px 0 80px; position: relative; overflow: hidden; }
+    .hero:before, .hero:after {
+      content: ""; position: absolute; width: 220px; height: 220px; border: 1px solid rgba(158,48,45,.25);
+      border-radius: 50%; pointer-events: none;
+    }
+    .hero:before { top: 12%; left: -130px; box-shadow: 0 0 0 16px rgba(158,48,45,.035), 0 0 0 32px rgba(158,48,45,.025); }
+    .hero:after { bottom: 4%; right: -130px; box-shadow: 0 0 0 16px rgba(158,48,45,.035), 0 0 0 32px rgba(158,48,45,.025); }
+    .eyebrow { text-transform: uppercase; letter-spacing: .22em; font-size: .72rem; color: var(--red); font-weight: 700; }
+    .bengali { font-family: var(--bengali); }
+    .hero .bengali { font-size: clamp(1.5rem, 4vw, 2.2rem); color: var(--red); margin: 0 0 12px; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.12; }
+    h1 { font-size: clamp(3.4rem, 9vw, 7.3rem); letter-spacing: -.055em; margin: 12px 0; }
+    h1 .amp { color: var(--red); font-style: italic; font-size: .68em; }
+    .hero-sub { max-width: 540px; color: var(--muted); margin: 18px auto 28px; font-size: 1.02rem; }
+    .date-pill { display: inline-block; border: 1px solid var(--gold); padding: 9px 17px; color: var(--red-dark); font-size: .82rem; letter-spacing: .09em; text-transform: uppercase; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: var(--red); color: #fff8ef; text-decoration: none; padding: 13px 20px;
+      border: 1px solid var(--red); font: 600 .85rem var(--sans); letter-spacing: .04em; cursor: pointer;
+      transition: transform .2s, background .2s;
+    }
+    .btn:hover { background: var(--red-dark); transform: translateY(-2px); }
+    .btn.secondary { color: var(--red); background: transparent; }
+    .btn.secondary:hover { color: white; }
+    .hero-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 25px; }
+    .ornament { color: var(--gold); letter-spacing: .6em; margin: 24px 0; }
+    section { padding: 76px 0; }
+    .section-head { max-width: 650px; margin: 0 auto 36px; text-align: center; }
+    .section-head h2 { font-size: clamp(2.2rem, 5vw, 3.5rem); margin: 10px 0 12px; }
+    .section-head p { color: var(--muted); margin: 0; }
+    .story { background: rgba(239,226,207,.52); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .story-card { padding: 28px; border: 1px solid var(--line); background: rgba(248,241,230,.78); position: relative; }
+    .story-card .number { font-family: var(--serif); font-size: 3rem; color: rgba(158,48,45,.28); line-height: 1; }
+    .story-card h3 { font-size: 1.65rem; margin: 14px 0 10px; }
+    .story-card p { color: var(--muted); margin: 0; }
+    .story-card .tag { display: inline-block; margin-top: 20px; font-size: .72rem; color: var(--red); letter-spacing: .12em; text-transform: uppercase; }
+    .quote { text-align: center; padding: 30px 10px 0; font-family: var(--serif); font-size: clamp(1.35rem, 3vw, 2rem); font-style: italic; color: var(--red-dark); }
+    .events { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .event { border: 1px solid var(--line); padding: 26px 22px; background: rgba(255,255,255,.22); }
+    .event .event-index { color: var(--gold); font-size: .75rem; letter-spacing: .15em; text-transform: uppercase; }
+    .event h3 { font-size: 1.6rem; margin: 10px 0; }
+    .event .event-date { color: var(--red); font-weight: 700; }
+    .event p { color: var(--muted); margin: 8px 0; font-size: .92rem; }
+    .event a { display: inline-block; color: var(--red); margin-top: 10px; font-size: .82rem; text-underline-offset: 4px; }
+    .countdown { background: var(--red-dark); color: var(--paper); text-align: center; }
+    .countdown .eyebrow { color: #e8cda4; }
+    .countdown h2 { font-size: clamp(2rem, 5vw, 3.5rem); margin: 12px 0 28px; }
+    .timer { display: flex; justify-content: center; gap: clamp(12px, 4vw, 42px); flex-wrap: wrap; }
+    .time-unit { min-width: 74px; }
+    .time-unit strong { display: block; font: 500 clamp(2.2rem, 6vw, 4rem) var(--serif); }
+    .time-unit span { color: #e8cda4; text-transform: uppercase; font-size: .68rem; letter-spacing: .16em; }
+    .planning { display: grid; grid-template-columns: .85fr 1.15fr; gap: 45px; align-items: center; }
+    .planning-art { min-height: 320px; border: 1px solid var(--gold); display: grid; place-items: center; padding: 30px; position: relative; background: #f3e6d3; text-align: center; }
+    .planning-art:before { content: ""; position: absolute; inset: 12px; border: 1px solid rgba(158,48,45,.35); pointer-events: none; }
+    .sun { width: 130px; height: 130px; border: 1px solid var(--red); border-radius: 50%; display: grid; place-items: center; color: var(--red); font-family: var(--bengali); font-size: 2.6rem; margin: 0 auto 14px; box-shadow: 0 0 0 12px rgba(158,48,45,.06), 0 0 0 24px rgba(158,48,45,.04); }
+    .planning-copy h2 { font-size: clamp(2.2rem, 5vw, 3.3rem); margin: 10px 0 18px; }
+    .planning-copy p { color: var(--muted); }
+    .checklist { list-style: none; padding: 0; margin: 22px 0; }
+    .checklist li { border-bottom: 1px dashed var(--line); padding: 10px 0; display: flex; gap: 12px; align-items: baseline; }
+    .checklist li:before { content: "✳"; color: var(--red); }
+    .family { background: rgba(239,226,207,.52); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .family-note { max-width: 760px; margin: auto; text-align: center; color: var(--muted); }
+    .family-note .bengali { font-size: 1.8rem; color: var(--red); }
+    .rsvp { text-align: center; }
+    .rsvp-panel { max-width: 720px; margin: auto; padding: clamp(25px, 6vw, 52px); border: 1px solid var(--gold); background: rgba(255,255,255,.24); position: relative; }
+    .rsvp-panel h2 { font-size: clamp(2.3rem, 5vw, 3.6rem); margin: 12px 0; }
+    .rsvp-panel p { color: var(--muted); }
+    .footer { padding: 24px 0 34px; border-top: 1px solid var(--line); text-align: center; color: var(--muted); font-size: .78rem; }
+    .footer strong { color: var(--red); font-family: var(--serif); font-size: 1rem; }
+    .small-note { font-size: .75rem; color: var(--muted); margin-top: 16px; }
+
+    .gallery { background: rgba(239,226,207,.42); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .gallery-grid { display: grid; grid-template-columns: 1.15fr 1fr 1fr; gap: 18px; align-items: start; }
+    .photo-card { margin: 0; padding: 12px; border: 1px solid var(--line); background: var(--paper); transform: rotate(-.6deg); }
+    .photo-card:nth-child(2) { transform: rotate(1deg); margin-top: 24px; }
+    .photo-card:nth-child(3) { transform: rotate(-1.2deg); margin-top: 8px; }
+    .photo-card img { display: block; width: 100%; height: 220px; object-fit: cover; background: var(--paper-deep); }
+    .photo-tall img { height: 300px; }
+    .photo-placeholder { display: none; height: 220px; padding: 22px; place-items: center; text-align: center; background: #f0e1cc; color: var(--red); border: 1px dashed rgba(158,48,45,.4); }
+    .photo-tall .photo-placeholder { height: 300px; }
+    .photo-placeholder span { font: 3rem var(--serif); opacity: .5; }
+    .photo-placeholder strong { font: 1.3rem var(--serif); }
+    .photo-placeholder small { color: var(--muted); font-size: .72rem; overflow-wrap: anywhere; }
+    .photo-card figcaption { padding: 12px 3px 4px; color: var(--muted); font: .86rem var(--serif); }
+    .photo-card figcaption em { display: block; font-size: .78rem; margin-top: 3px; }
+
+
+    .rsvp-invocation {
+      color: var(--red);
+      margin: 12px 0 2px;
+      font-size: 1.25rem;
+    }
+
+    .alpana-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: var(--red);
+      margin: 22px auto 28px;
+      max-width: 230px;
+    }
+
+    .alpana-divider i {
+      height: 1px;
+      flex: 1;
+      background: var(--gold);
+    }
+
+    .rsvp-form {
+      max-width: 590px;
+      margin: 26px auto 0;
+      text-align: left;
+    }
+
+    .form-row {
+      margin: 0 0 21px;
+    }
+
+    .form-row > label,
+    .attendance-field legend {
+      display: block;
+      color: var(--red-dark);
+      font-weight: 700;
+      font-size: .95rem;
+      margin-bottom: 8px;
+    }
+
+    .form-row > label span,
+    .attendance-field legend span {
+      display: block;
+      font-size: .76rem;
+      font-weight: 400;
+      color: var(--muted);
+      letter-spacing: .02em;
+    }
+
+    .rsvp-form input[type="text"],
+    .rsvp-form input[type="tel"],
+    .rsvp-form select,
+    .rsvp-form textarea {
+      width: 100%;
+      border: 1px solid rgba(158, 48, 45, .35);
+      border-radius: 0;
+      padding: 13px 14px;
+      background: rgba(255, 252, 246, .8);
+      color: var(--ink);
+      font: 400 .95rem var(--sans);
+      outline: none;
+    }
+
+    .rsvp-form input:focus,
+    .rsvp-form select:focus,
+    .rsvp-form textarea:focus {
+      border-color: var(--red);
+      box-shadow: 0 0 0 3px rgba(158, 48, 45, .1);
+    }
+
+    .rsvp-form textarea {
+      resize: vertical;
+    }
+
+    .attendance-field {
+      border: 0;
+      padding: 0;
+      margin: 0 0 22px;
+    }
+
+    .attendance-field legend {
+      padding: 0;
+      margin-bottom: 10px;
+    }
+
+    .choice {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid var(--line);
+      padding: 12px;
+      margin: 8px 0;
+      cursor: pointer;
+      background: rgba(255, 252, 246, .45);
+    }
+
+    .choice:has(input:checked) {
+      border-color: var(--red);
+      background: rgba(158, 48, 45, .055);
+    }
+
+    .choice input,
+    .event-choices input {
+      accent-color: var(--red);
+    }
+
+    .choice-mark {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      color: var(--red);
+      flex-shrink: 0;
+    }
+
+    .choice strong,
+    .choice small {
+      display: block;
+    }
+
+    .choice strong {
+      color: var(--ink);
+      font-size: .9rem;
+    }
+
+    .choice small {
+      color: var(--muted);
+      font-size: .76rem;
+    }
+
+    .event-choices {
+      display: grid;
+      gap: 8px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .event-choices label {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      border: 1px solid var(--line);
+      padding: 10px;
+      font-size: .8rem;
+      cursor: pointer;
+    }
+
+    .rsvp-submit {
+      width: 100%;
+      margin-top: 4px;
+    }
+
+    .rsvp-status {
+      text-align: center;
+      color: var(--red-dark);
+      font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+      .event-choices {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .topbar { align-items: flex-start; gap: 12px; }
+      .topbar nav { gap: 10px; flex-wrap: wrap; justify-content: flex-end; font-size: .68rem; }
+      .story-grid, .planning { grid-template-columns: 1fr; }
+      .events { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; max-width: 440px; margin: auto; }
+      .photo-card:nth-child(2), .photo-card:nth-child(3) { margin-top: 0; }
+      .planning-art { min-height: 260px; }
+      section { padding: 58px 0; }
+      .hero { min-height: 74vh; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *:before, *:after { transition: none !important; } }
+  </style>
+</head>
+<body>
+  <!--
+    QUICK CUSTOMIZATION:
+    1. Replace names, dates, venues and stories below.
+    2. Set WEDDING_DATE in the script to your wedding date/time.
+    3. Set RSVP_WHATSAPP to a phone number with country code, digits only.
+    4. This is frontend-only: RSVP opens WhatsApp; no data is stored on a server.
+  -->
+  <header class="wrap topbar">
+    <a class="brand" href="#home" style="text-decoration:none">শুভ বিবাহ · Shubho Bibaho</a>
+    <nav aria-label="Main navigation">
+      <a href="#story">Our story</a>
+      <a href="#gallery">Photos</a>
+      <a href="#events">The days</a>
+      <a href="#planning">The little things</a>
+      <a href="#rsvp">RSVP</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero wrap" id="home">
+      <div>
+        <p class="bengali">শুভ পরিণয়</p>
+        <div class="eyebrow">With love, laughter & a little bit of mishti</div>
+        <h1><span id="person-one">Indranil</span><br><span class="amp">&</span><br><span id="person-two">Shaibalini</span></h1>
+        <div class="ornament" aria-hidden="true">— ✳ — ✳ —</div>
+        <p class="hero-sub">দুই পরিবার, অনেক গল্প, আর এক নতুন শুরু। Two families, a thousand little stories, and one beautiful beginning. We'd love for you to be there.</p>
+        <div class="date-pill" id="hero-date">Monday · 7 December 2026</div>
+        <div class="hero-actions">
+          <a class="btn" href="#events">Explore the invitation ↓</a>
+          <a class="btn secondary" href="#rsvp">Save your seat</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="story" id="story">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">A little backstory</div>
+          <h2>আমাদের গল্প শুরু</h2>
+          <p>Every great story begins somewhere. Here are a few pages from ours — আমাদের গল্পের কিছু ছোট্ট মুহূর্ত।</p>
+        </div>
+        <div class="story-grid">
+          <article class="story-card">
+            <div class="number">01</div>
+            <h3>The first hello</h3>
+            <p>How we met? <em>It all began with a message about a college project at IIT Madras. She had a few questions about Business Data Management, and I had no idea that answering them would lead to endless conversations, countless little moments, and eventually, this beautiful beginning.
+
+From discussing a project to planning a wedding, we've come a long way. And now, we're ready for our favourite project yet — a lifetime together.</em>. It was an ordinary day that quietly became one of our favourite memories.</p>
+            <span class="tag">The beginning</span>
+          </article>
+          <article class="story-card">
+            <div class="number">02</div>
+            <h3>Somewhere along the way</h3>
+            <p>Between long conversations, silly jokes, shared plans and cups of tea, we found a person who felt a little like home.</p>
+            <span class="tag">The becoming</span>
+          </article>
+          <article class="story-card">
+            <div class="number">03</div>
+            <h3>She said what my heart had been waiting to say.</h3>
+            <p><em>I was lucky enough that she found the courage I couldn't quite gather.
+
+In a story that began with endless conversations, it was Shaibalini who took the first step and expressed her feelings. I had been holding mine close, not quite brave enough to say them aloud. And then, just like that, she made it easier for both of us.
+
+What followed was the beginning of us — a journey of shared feelings, little moments, and dreams that slowly began to take shape together. Before long, we shared our story with our parents, bringing our two families into the journey too.
+
+Looking back, I'm still grateful she spoke first. Sometimes, all a love story needs is one person brave enough to say what the other is hoping to hear.</em> No grand movie scene required — just a moment that felt unmistakably ours.</p>
+            <span class="tag">The yes</span>
+          </article>
+          <article class="story-card">
+            <div class="number">04</div>
+            <h3>Now, the shaadi!</h3>
+            <p>Now we're gathering our favourite people, planning all the little details, and getting ready to turn “you and me” into “us”. এই তো, আমাদের নতুন অধ্যায়ের শুরু।</p>
+            <span class="tag">The next chapter</span>
+          </article>
+        </div>
+        <div class="quote">“A home is not a place, but a person — and then, a whole family.”</div>
+      </div>
+    </section>
+
+
+    <section class="gallery" id="gallery">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Little glimpses of us · আমাদের কিছু মুহূর্ত</div>
+          <h2>Snapshots & scribbles</h2>
+          <p>A few favourite photographs, with a little storybook charm around them.</p>
+        </div>
+        <div class="gallery-grid">
+          <figure class="photo-card photo-tall">
+            <img src="assets/our-first-photo.jpg" alt="Indranil and Shaibalini — a favourite photograph" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid'">
+            <div class="photo-placeholder"><span>01</span><strong>Our first favourite photo</strong><small>Replace with assets/our-first-photo.jpg</small></div>
+            <figcaption>একটা ছোট্ট মুহূর্ত, অনেকটা গল্প। <em>The beginning of a thousand memories.</em></figcaption>
+          </figure>
+          <figure class="photo-card">
+            <img src="assets/a-day-together.jpg" alt="A day together" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid'">
+            <div class="photo-placeholder"><span>02</span><strong>A day together</strong><small>Replace with assets/a-day-together.jpg</small></div>
+            <figcaption>Ordinary days, favourite person.</figcaption>
+          </figure>
+          <figure class="photo-card">
+            <img src="assets/wedding-planning.jpg" alt="Wedding planning moments" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid'">
+            <div class="photo-placeholder"><span>03</span><strong>Planning our little forever</strong></div>
+            <figcaption>Lists, laughter, and a little bit of chaos.</figcaption>
+          </figure>
+        </div>
+        
+      </div>
+    </section>
+
+    <section id="events">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Mark your calendar</div>
+          <h2>The celebrations</h2>
+          <p>Come for the rituals, stay for the adda, mishti and memories.</p>
+        </div>
+        <div class="events">
+          <article class="event">
+            <div class="event-index">The warm-up</div>
+            <h3>Gaye Holud</h3>
+            <div class="event-date">[Day, Date]</div>
+            <p>[Venue and full address]</p>
+            <a href="#" class="map-link" data-map="Gaye Holud venue address">Find the venue ↗</a>
+          </article>
+          <article class="event">
+            <div class="event-index">The main event</div>
+            <h3>Shubho Bibaho</h3>
+            <div class="event-date">[Day 1, 5th Dec, 2026]</div>
+            <p>[Bhattacharyya House, Kalna]</p>
+            <a href="#" class="map-link" data-map="Wedding venue address">Find the venue ↗</a>
+          </article>
+          <article class="event">
+            <div class="event-index">One more celebration</div>
+            <h3>Bou Bhaat / Reception</h3>
+            <div class="event-date">[Day 3, 7th Dec, 2026]</div>
+            <p>[Raja Bhavan, Kalna]</p>
+            <a href="#" class="map-link" data-map="Reception venue address">Find the venue ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="countdown">
+      <div class="wrap">
+        <div class="eyebrow">The countdown to forever</div>
+        <h2>Not long now...</h2>
+        <div class="timer" aria-live="polite">
+          <div class="time-unit"><strong id="days">—</strong><span>Days</span></div>
+          <div class="time-unit"><strong id="hours">—</strong><span>Hours</span></div>
+          <div class="time-unit"><strong id="minutes">—</strong><span>Minutes</span></div>
+          <div class="time-unit"><strong id="seconds">—</strong><span>Seconds</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="planning">
+      <div class="wrap planning">
+        <div class="planning-art">
+          <div>
+            <div class="sun">ভালোবাসা</div>
+            <div class="eyebrow">A work in progress, with love</div>
+            <p style="font-family:var(--serif);font-size:1.25rem;margin:10px 0 0">Our little wedding diary</p>
+          </div>
+        </div>
+        <div class="planning-copy">
+          <div class="eyebrow">Behind the scenes</div>
+          <h2>Planning, pinning & a little chaos.</h2>
+          <p>There are lists to make, outfits to choose, playlists to argue over and approximately a million tiny decisions. We're trying to enjoy the in-between, too.</p>
+          <ul class="checklist">
+            <li><span><strong>The mood board:</strong> red, ivory, old family photos and alpana patterns.</span></li>
+            <li><span><strong>The menu debate:</strong> because a Bengali wedding is also a food festival.</span></li>
+            <li><span><strong>The playlist:</strong> a little Rabindra Sangeet, a little nostalgia, a lot of dancing.</span></li>
+            <li><span><strong>The real plan:</strong> be present, hug everyone, and remember to eat.</span></li>
+          </ul>
+          <p class="small-note">Make this section yours: add planning updates, funny disagreements, outfit sneak peeks, or a photo diary as the day gets closer.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="family">
+      <div class="wrap family-note">
+        <p class="bengali">আপনাদের সাদর আমন্ত্রণ</p>
+        <h2 style="font:500 clamp(2rem,5vw,3rem) var(--serif);color:var(--ink);margin:8px 0 18px">পরিবারের আশীর্বাদে · With the blessings of our families</h2>
+        <p>With full hearts and the blessings of our elders, we invite you to celebrate this new beginning with us. Your presence will make our day even more special.</p>
+        <p style="margin-top:24px;color:var(--red);font-family:var(--serif);font-size:1.25rem">With love, <span id="signoff">Indranil & Shaibalini</span></p>
+      </div>
+    </section>
+
+    
+<section class="rsvp" id="rsvp">
+  <div class="wrap">
+    <div class="rsvp-panel">
+      <div class="eyebrow">We saved you a place in our story</div>
+
+      <p class="bengali rsvp-invocation">
+        সাদর নিমন্ত্রণ · আপনাদের অপেক্ষায় রইলাম
+      </p>
+
+      <h2>আমাদের সঙ্গে থাকবে তো?</h2>
+
+      <p>
+        Please let us know if you'll be able to celebrate with us.
+        তোমাদের সঙ্গে এই দিনটা ভাগ করে নেওয়ার অপেক্ষায় রইলাম।
+      </p>
+
+      <div class="alpana-divider" aria-hidden="true">
+        <span>✳</span><i></i><span>❋</span><i></i><span>✳</span>
+      </div>
+
+      <form id="rsvp-form" class="rsvp-form">
+        <div class="form-row">
+          <label for="guest-name">
+            আপনার নাম <span>Your name</span>
+          </label>
+          <input
+            id="guest-name"
+            name="guestName"
+            type="text"
+            autocomplete="name"
+            placeholder="আপনার নাম লিখুন"
+            maxlength="100"
+            required
+          >
+        </div>
+
+        <div class="form-row">
+          <label for="guest-contact">
+            যোগাযোগের নম্বর <span>Phone number (optional)</span>
+          </label>
+          <input
+            id="guest-contact"
+            name="contact"
+            type="tel"
+            autocomplete="tel"
+            placeholder="আপনার ফোন নম্বর"
+          >
+        </div>
+
+        <fieldset class="attendance-field">
+          <legend>
+            আপনি কি আসতে পারবেন?
+            <span>Will you be joining us?</span>
+          </legend>
+
+          <label class="choice">
+            <input type="radio" name="attendance"
+                   value="joyfully-attending" required>
+            <span class="choice-mark">✓</span>
+            <span>
+              <strong>অবশ্যই আসব!</strong>
+              <small>Joyfully accepting</small>
+            </span>
+          </label>
+
+          <label class="choice">
+            <input type="radio" name="attendance"
+                   value="unable-to-attend">
+            <span class="choice-mark">♡</span>
+            <span>
+              <strong>মন থেকে আশীর্বাদ রইল</strong>
+              <small>Regretfully declining</small>
+            </span>
+          </label>
+        </fieldset>
+
+        <div class="form-row">
+          <label for="guest-count">
+            কতজন আসছেন?
+            <span>Number of guests, including you</span>
+          </label>
+          <select id="guest-count" name="guestCount">
+            <option value="1">১ জন · Just me</option>
+            <option value="2">২ জন</option>
+            <option value="3">৩ জন</option>
+            <option value="4">৪ জন</option>
+            <option value="5+">৫ জন বা তার বেশি · 5+</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label>
+            কোন অনুষ্ঠানে যোগ দেবেন?
+            <span>Which celebration(s)?</span>
+          </label>
+
+          <div class="event-choices">
+            <label>
+              <input type="checkbox" name="guestEvents"
+                     value="Gaye Holud">
+              গায়ে হলুদ
+            </label>
+            <label>
+              <input type="checkbox" name="guestEvents"
+                     value="Wedding ceremony">
+              শুভ বিবাহ
+            </label>
+            <label>
+              <input type="checkbox" name="guestEvents"
+                     value="Reception / Bou Bhaat">
+              বৌভাত / Reception
+            </label>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="guest-note">
+            একটু ভালোবাসার বার্তা
+            <span>A little note for us (optional)</span>
+          </label>
+          <textarea
+            id="guest-note"
+            name="guestNote"
+            rows="3"
+            maxlength="500"
+            placeholder="আপনাদের শুভেচ্ছা, স্মৃতি, কিংবা মনের কথা…"
+          ></textarea>
+        </div>
+
+        <button class="btn rsvp-submit" type="submit">
+          নিমন্ত্রণে সাড়া দিন · Send RSVP ↗
+        </button>
+
+        <p class="small-note">
+          Thank you for being part of our story.
+          Responses aren't stored until the form is connected to a database.
+        </p>
+
+        <p id="rsvp-status" class="rsvp-status"
+           role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <strong id="footer-names">Indranil & Shaibalini</strong>
+      <div>Made with love, a little alpana, and a lot of anticipation.</div>
+    </div>
+  </footer>
+
+  <script>
+    // ========= EDIT THESE DETAILS =========
+    const COUPLE = {
+      personOne: "Indranil",
+      personTwo: "Shaibalini",
+      weddingDateText: "Monday · 7 December 2026",
+      // Use local time in the format YYYY-MM-DDTHH:MM:SS, e.g. "2027-02-14T18:30:00"
+      weddingDate: "2026-12-07T18:30:00",
+      // WhatsApp number with country code, digits only. Example India: 919876543210
+      rsvpWhatsApp: "91XXXXXXXXXX"
+    };
+    // =====================================
+
+    
+
+    document.querySelectorAll(".map-link").forEach(link => {
+      link.addEventListener("click", event => {
+        event.preventDefault();
+        const address = link.dataset.map || "";
+        if (address && !address.toLowerCase().includes("venue address")) {
+          window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`, "_blank", "noopener");
+        } else {
+          alert("Please replace this event's venue address in index.html first.");
+        }
+      });
+    });
+
+    const targetDate = new Date(COUPLE.weddingDate).getTime();
+    const updateCountdown = () => {
+      const now = Date.now();
+      let diff = targetDate - now;
+      if (Number.isNaN(targetDate)) diff = NaN;
+      if (!Number.isFinite(diff)) {
+        ["days", "hours", "minutes", "seconds"].forEach(id => document.getElementById(id).textContent = "—");
+        return;
+      }
+      if (diff <= 0) {
+        document.querySelector(".countdown h2").textContent = "Today is the day!";
+        ["days", "hours", "minutes", "seconds"].forEach(id => document.getElementById(id).textContent = "0");
+        return;
+      }
+      const units = {
+        days: Math.floor(diff / 86400000),
+        hours: Math.floor((diff % 86400000) / 3600000),
+        minutes: Math.floor((diff % 3600000) / 60000),
+        seconds: Math.floor((diff % 60000) / 1000)
+      };
+      Object.entries(units).forEach(([id, value]) => document.getElementById(id).textContent = String(value).padStart(2, "0"));
+    };
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+
+
+
+  const rsvpForm = document.getElementById("rsvp-form");
+
+  rsvpForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const data = new FormData(rsvpForm);
+    const guestName = String(data.get("guestName") || "").trim();
+    const attendance = data.get("attendance");
+
+    if (!guestName || !attendance) {
+      document.getElementById("rsvp-status").textContent =
+        "Please enter your name and select your RSVP response.";
+      return;
+    }
+
+    const response = {
+      guestName,
+      contact: String(data.get("contact") || "").trim(),
+      attendance,
+      guestCount: data.get("guestCount"),
+      guestEvents: data.getAll("guestEvents"),
+      guestNote: String(data.get("guestNote") || "").trim(),
+      submittedAt: new Date().toISOString()
+    };
+
+    // Frontend demo only: this does not save or send the response.
+    console.log("RSVP preview — not saved:", response);
+
+    const status = document.getElementById("rsvp-status");
+
+    status.textContent =
+      attendance === "joyfully-attending"
+        ? `ধন্যবাদ, ${guestName}! We can't wait to celebrate with you.`
+        : `Thank you, ${guestName}. Sending you our love!`;
+
+    rsvpForm.reset();
+  });
+
+  </script>
+</body>
+</html>

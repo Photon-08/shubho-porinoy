@@ -1,0 +1,4 @@
+Add your own image files here using these names:
+- our-first-photo.jpg
+- a-day-together.jpg
+- wedding-planning.jpg
